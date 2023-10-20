@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar abstração</title>
+</head>
+<body>
+    <script>
+       class Cadeira {
+            constructor(
+                qtde_pernas, cor, giratoria, material, estado) {
+                    this.qtde_pernas= qtde_pernas
+                    this.cor= cor
+                    this.giratoria= giratoria
+                    this.material= material
+                    this.estado=estado
+                }
+                girarCadeira(){
+                    if(this.giratoria === true){
+                        console.log('Girando')
+                    } else {
+                        console.log('Cadeira Não é giratoria')
+                    }
+                }        
+       }
+       let cadeira = new Cadeira(4, 'azul', false, 'madeira', 'nova')
+       cadeira.girarCadeira()
+    </script>
+</body>
+</html>
