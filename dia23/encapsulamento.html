@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Tv {
+            constructor() {
+                this._relacaodeCanais = Array(2,4,5,7,10)
+                this._canalAtivo = 7
+                this._volume = 10
+            }
+            //getters
+            get relacaodeCanais() {
+                return this._relacaodeCanais
+            }
+            get canalAtivo() {
+                return this._canalAtivo
+            }
+            get volume() {
+                return this._volume
+            }
+            //setters
+            set relacaodeCanais(relacao){
+                this._relacaodeCanais
+            }
+            set canalAtivo(canal){
+                //verificar se o canal solicitado existe
+                let x = this.relacaodeCanais.indexof(canal)
+                if (x) {
+                    this._canalAtivo = canal  
+                }
+            }
+            set volume(novo_volume){
+                this._volume = novo_volume
+            }
+        }
+        let televisao = new Tv();
+        console.log(televisao._canalAtivo)
+        console.log(televisao.canalAtivo)
+    </script>
+</body>
+</html>
