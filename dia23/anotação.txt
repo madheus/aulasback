@@ -3,5 +3,5 @@ objetivo; proteção e segurança
 conceito; ocultar partes independentes da aplicação permitindo construir partes 'invisiveis' ao mundo exterior
 interface; lista de serviços fornecidos por um componente, sem atributos apenas metodos e abstratos
 
-getters= pesquisa os salvos/ chama função
-setters= salvar
+getters= pesquisa os salvos/ chama os salvos
+setters= salvar, mudar o ja existente

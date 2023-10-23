@@ -30,7 +30,7 @@
             }
             set canalAtivo(canal){
                 //verificar se o canal solicitado existe
-                let x = this.relacaodeCanais.indexof(canal)
+                let x = this.relacaodeCanais.indexOf(canal)
                 if (x) {
                     this._canalAtivo = canal  
                 }
@@ -41,7 +41,9 @@
         }
         let televisao = new Tv();
         console.log(televisao._canalAtivo)
+        televisao.canalAtivo = 10
         console.log(televisao.canalAtivo)
+        
     </script>
 </body>
 </html>
