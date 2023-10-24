@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Motorista {
+                constructor(nome, podeFazerManutencao) {
+                    this.nome = nome;
+                    this.podeFazerManutencao = podeFazerManutencao;
+                }
+            }
+
+        class Carro {
+            constructor(cor, velocidade_max, estado, motorista) {
+                this._cor = cor;
+                this._velocidade_max = velocidade_max;
+                this._estado = estado;
+                this.motorista = motorista;
+                this.velocidade = 0;
+            }
+
+            get cor() {
+                return this._cor;
+            }
+
+            set cor(novaCor) {
+                this._cor = novaCor;
+            }
+
+            get velocidade_max() {
+                return this._velocidade_max;
+            }
+
+            set velocidade_max(novaVelocidadeMax) {
+                this._velocidade_max = novaVelocidadeMax;
+            }
+
+            get estado() {
+                return this._estado;
+            }
+
+            set estado(novoEstado) {
+                this._estado = novoEstado;
+            }
+
+            acelerar() {
+                if (this._estado === "ligado") {
+                    this.velocidade += 10;
+                    if (this.velocidade > this._velocidade_max) {
+                        this.velocidade = this._velocidade_max;
+                    }
+                } else {
+                    console.log("O carro está desligado. Ligue o carro antes de acelerar.");
+                }
+            }
+
+            atingirVelocidadeMax() {
+                console.log(`O carro atingiu a velocidade máxima de ${this._velocidade_max} km/h.`);
+            }
+
+            fazerManutencao() {
+                if (this.motorista.podeFazerManutencao) {
+                    console.log(`Manutenção realizada no carro ${this._cor}.`);
+                } else {
+                    console.log(`${this.motorista.nome} não está autorizado a fazer manutenção.`);
+                }
+            }
+
+            trocarOleo() {
+                if (this.motorista.podeFazerManutencao) {
+                    console.log(`Óleo trocado no carro ${this._cor}.`);
+                } else {
+                    console.log(`${this.motorista.nome} não está autorizado a trocar o óleo.`);
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
