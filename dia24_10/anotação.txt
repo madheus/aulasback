@@ -1,0 +1,6 @@
+herança
+
+permite basear uma nova classe na definição de uma utra classe previamente existente.
+a herança sera aplicada tanto para caracteristicas como para comportamentos.
+
+

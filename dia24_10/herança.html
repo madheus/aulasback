@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(cor, tamanho, peso, especie) {
+                this.cor = peso
+                this.tamanho = tamanho
+                this.peso = peso
+                this.especie = especie
+            }
+            dormir() {
+                console.log("a mimir")
+            }
+        }
+
+        class Cachorro extends Animal {
+            constructor(cor, tamanho, peso, especie) {
+                super('branco e marrom', '30cm', 12, 'vira-lata')
+                this.orelhas= 'grandes e caidas'
+            }
+
+            correr() {
+                console.log('correndo')
+            }
+            rosnar() {
+                console.log('rosnar')
+            }
+        }
+        class Passaro extends Animal {
+            constructor(cor, tamanho, peso, especie) {
+                super(cor, tamanho, peso, especie)
+                this.asacortada= 'sim'
+                this.bico= 'curvado porntudo'
+            }
+            voar() {
+                console.log('eu consigo voar')
+            }
+            pousar() {
+                console.log('para que o cabra ne de ferro')
+            }
+        }
+        class Papagaio extends Passaro {
+            constructor(cor, tamanho, peso, especie) {
+                super(cor, tamanho, peso, especie)
+                this.asacortada= 'sim'
+            }
+            falar() {
+                console.log('consigo falar')
+            }
+            escalarhumano() {
+                console.log('escalando o humano')
+            }
+            descerdohumano() {
+                console.log('descendo do humano')
+            }
+        }
+        let Marmaduk =  new Cachorro()
+        let quick = new Passaro('branco com azul', '10cm', '80g')
+        let loro = new Papagaio(true, 'verde', '50cm', 100)
+
+        Marmaduk.dormir()
+        quick.dormir()
+    </script>
+</body>
+</html>

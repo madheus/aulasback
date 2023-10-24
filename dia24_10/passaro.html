@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Passaro {
+            constructor(cor, tamanho, peso, especie) {
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+                this.especie = especie
+            }
+
+            dormir() {
+                console.log('a mimir')
+            }
+            voar() {
+                console.log('eu consigo voar')
+            }
+            pousar() {
+                console.log('para que o cabra ne de ferro')
+            }
+        }
+        class Papagaio {
+            constructor(cor, tamanho, peso, especie) {
+                super('verde e azul', '30cm', 2, 'papagaio normal')
+                this.asacortada= 'sim'
+            }
+            falar() {
+                console.log('consigo falar')
+            }
+            escalarhumano() {
+                console.log('escalando o humano')
+            }
+            descerdohumano() {
+                console.log('descendo do humano')
+            }
+        }
+
+    </script>
+</body>
+</html>
