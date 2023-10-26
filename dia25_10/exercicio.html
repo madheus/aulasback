@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Automovel {
+            constructor(cor, marca, velo){
+                this.cor= cor
+                this.marca = marca
+                this.velo = velo
+            }
+            ligar(){
+                console.log('virando a chave')
+            }
+            desligar(){
+                console.log('virando a chave ao contrario')
+            }
+        }
+        class Carro extends Automovel {
+              constructor(cor, marca, velo){
+                super(cor, marca, velo)
+           }
+            fazerBaliza() {
+                console.log('Estacionando')
+            }
+            acelerar() {
+                console.log('acelerando')
+            }
+        }
+        class Onibus extends Automovel {
+              constructor(cor, marca, velo){
+                super(cor, marca, velo)
+           }
+            fazerBaliza() {
+                console.log('fazendo baliza pera um momento')
+            }
+            acelerar() {
+                console.log('acelerando')
+            }
+            pegarpassageiro(){
+                console.log('pegando passageiro')
+            }
+        }
+        let skyline = new Carro('cinza com azul', 'nissan', 300)
+        let bus = new Onibus('azul', 'mercedez', 150 )
+        skyline.fazerBaliza()
+        skyline.acelerar()
+        bus.pegarpassageiro()
+        bus.fazerBaliza()
+    </script>
+</body>
+</html>
