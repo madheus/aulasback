@@ -20,31 +20,7 @@ class Heroi extends Personagem {
         this.pontosDefesa= 5
         this.poderespecial = 'grito da alma'
     }
-    ataquePadrao(){
-        Number(this.hp)-Number(this.pontosAtaque)
-        console.log('ataque sofrido menos pontos de vida, vida atual: ')
-        console.log(this.pontoVida)
-    }
-    defesaPadrao(){
-        Number(this.pontosAta)-Number(this.pontosDefesa)
-        Number(this.pontoVida)-Number(this.pontosAta)
-        console.log('ataque sofrido em modo de defesa, vida atual')
-        console.log(this.pontoVida)
-    }
-    ataqueEspecial(){
-        Number(this.pontosAta)+30
-    }
-    Podersao() {
     
-    }
-    defesaPesada(){
-        Number(this.pontosDefesa)+20
-    }
-    curapadrao(){
-        console.log('feitiço de cura padrao usado')
-        Number(this.mp)-20
-        console.log(this.hp)
-    }
 }
 class Monstro extends Personagem {
     constructor(nome, raca, classe){
@@ -61,6 +37,35 @@ class Lutem {
     constructor() {
         
     }
+    ataquePadraoHeroi(){
+        let danonoMonstro= Number(this.pontosAtaque)-Number(this.pontosDef)
+        let restoVidaMonstro= Number(this.hp) - Number(danonoMonstro) 
+        console.log(`O monstro sofreu ${danonoMonstro} de dano.
+        vida atual do monstro ${restoVidaMonstro}`) 
+    }
+    defesaPadrãoHeroi() {
+        let danosofridoHeroi = Number(this.pontosAta)-Number(this.pontosDefesa)
+        let restovideHero = Number(this.pontoVida)-Number(danosofrido)
+        console.log(`o heroi sofreu ${danosofridoHeroi} de dano.
+        vida atual do heroi ${restovideHero}`)
+    }
+    ataquePadraoMonstro(){
+        let danonoHeroi = Number(this.pontosAta)-Number(this.pontosDefesa)
+        let restohpHeroi = Number(this.pontoVida)-Number(danonoHeroi)
+        console.log(`o monstro atacou voce, voce sofreu ${danonoHeroi}de dano.
+        sua vida atual é ${restohpHeroi}`)
+    }
+    defesaPadraoMonstro(){
+        let danosofridoMonstro = Number(this.pontosAtaque)-Number(this.pontosDef)
+        let respohpMonstro = Number(this.hp)-Number(danosofridoMonstro)
+        console.log(`o monstro sofreu ${danosofridoMonstro} de dano.
+        a vida so monstro atualmente é de ${respohpMonstro}`)
+    }
+    habilidadeCuraHero(){
+        let curado= Number(this.pontoVida)+25
+        console.log(``)
+    }
+    
 }
 
 
