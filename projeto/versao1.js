@@ -4,23 +4,8 @@ class Personagem {
     this.nome = nome
     this.raca = raca 
     this.classe = classe
-    this.nivel = 0
-    this.xp = 0
-    this.hp = 100
-    this.pontosAta= 7 
-    this.pontosDefesa= 3
     }
-    ataquePadrao(){
-        Number(this.hp)-Number(this.pontosAta)
-        console.log('ataque sofrido menos pontos de vida, vida atual: ')
-        console.log(this.hp)
-    }
-    defesaPadrao(){
-        Number(this.pontosAta)-Number(this.pontosDefesa)
-        Number(this.hp)-Number(this.pontosAta)
-        console.log('ataque sofrido em modo de defesa, vida atual')
-        console.log(this.hp)
-    }
+    
 }
 class Heroi extends Personagem {
     constructor(nome, raca, classe, nivel, xp, hp, pontosAta) {
@@ -29,11 +14,22 @@ class Heroi extends Personagem {
         this.classe = classe
         this.nivel = 0
         this.xp = 0
-        this.hp = 150
+        this.pontoVida = 150
         this.mp = 150
-        this.pontosAta= 10 
+        this.pontosAtaque= 10 
         this.pontosDefesa= 5
         this.poderespecial = 'grito da alma'
+    }
+    ataquePadrao(){
+        Number(this.hp)-Number(this.pontosAtaque)
+        console.log('ataque sofrido menos pontos de vida, vida atual: ')
+        console.log(this.pontoVida)
+    }
+    defesaPadrao(){
+        Number(this.pontosAta)-Number(this.pontosDefesa)
+        Number(this.pontoVida)-Number(this.pontosAta)
+        console.log('ataque sofrido em modo de defesa, vida atual')
+        console.log(this.pontoVida)
     }
     ataqueEspecial(){
         Number(this.pontosAta)+30
@@ -50,15 +46,27 @@ class Heroi extends Personagem {
         console.log(this.hp)
     }
 }
-class Monstros extends Personagem {
-    constructor(nome, raca, classe, nivel, xp, hp, pontosAta){
+class Monstro extends Personagem {
+    constructor(nome, raca, classe){
         this.nome = nome
         this.raca = raca
         this.classe = classe
         this.nivel = nivel
         this.hp = 75
+        this.pontosAta= 7 
+        this.pontosDef= 3
     }
 }
+class Lutem {
+    constructor() {
+        
+    }
+}
+
+
+troll = new Monstro('troll', 'troll da floresta', 'besta', 1)
+aranhaGigante = new Monstro('aranha gigante', 'não venenosa', 'animal', 0)
+BandidoFraco= new Monstro('Humano', 'Humano bandido', 'criminoso', 2)
 
 console.log('Bem Vindo Jogador')
 console.log('')
