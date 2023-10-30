@@ -23,29 +23,82 @@ class Heroi extends Personagem {
     }
     
 }
-class Monstro extends Personagem {
+class Animal extends Personagem {
     constructor(nome, raca, classe){
         this.nome = nome
         this.raca = raca
         this.classe = classe
         this.nivel = nivel
         this.hp = 75
+        this.magicpont = 75
         this.pontosAta= 7 
         this.pontosDef= 3
     }
 }
 class Lutem {
-    constructor() {
-        
+    constructor(hp, pontoVida, magicpont, mp, pontosAta, pontosAtaque, pontosDef, pontosDefesa) {
+        this.hp = hp
+        this.pontoVida = pontoVida
+        this.magicpont = magicpont
+        this.mp = mp
+        this.pontosAta = pontosAta
+        this.pontosAtaque = pontosAtaque
+        this.pontosDef = pontosDef
+        this.pontosDefesa = pontosDefesa
     }
-    
-    
+    ataquebasico(){
+
+        console.log(parseInt(Math.random() * 21))
+    }
+}
+//// Definindo a classe Guerreiro
+class Guerreiro {
+    constructor() {
+        this.forca = 10;
+        this.saude = 100;
+    }
+
+    // Método de ataque do guerreiro
+    atacar(monstro) {
+        let dano = this.forca;
+        monstro.perderVida(dano);
+        return "O guerreiro causou " + dano + " de dano ao monstro!";
+    }
 }
 
+// Definindo a classe Monstro
+class Monstro {
+    constructor() {
+        this.forca = 8;
+        this.saude = 50;
+    }
 
-troll = new Monstro('troll', 'troll da floresta', 'besta', 1)
-aranhaGigante = new Monstro('aranha gigante', 'não venenosa', 'animal', 0)
-BandidoFraco= new Monstro('Humano', 'Humano bandido', 'criminoso', 2)
+    // Método de ataque do monstro
+    atacar(guerreiro) {
+        let dano = this.forca;
+        guerreiro.perderVida(dano);
+        return "O monstro causou " + dano + " de dano ao guerreiro!";
+    }
+
+    // Método para o monstro perder vida
+    perderVida(dano) {
+        this.saude -= dano;
+        if (this.saude < 0) {
+            this.saude = 0;
+        }
+    }
+}
+
+// Exemplo de uso
+let guerreiro = new Guerreiro();
+let monstro = new Monstro();
+
+console.log(guerreiro.atacar(monstro)); // Saída: O guerreiro causou 10 de dano ao monstro!
+console.log(monstro.atacar(guerreiro)); // Saída: O monstro causou 8 de dano ao guerreiro!
+console.log("Saúde do guerreiro: " + guerreiro.saude); // Saída: Saúde do guerreiro: 90
+console.log("Saúde do monstro: " + monstro.saude); // Saída: Saúde do monstro: 40
+//
+
 
 console.log('Bem Vindo Jogador')
 console.log('')
@@ -77,7 +130,9 @@ if (classe=='Arqueiro') {
 if (classe=='Mago') {
     console.log('Mago:utiliza todas as magias disponiveis/Bonus de potencia em magias pois utiliza as duas mãos nelas')
 }
-dragonBorn = new Heroi(nome, raca, classe,)
+dragonBorn = new Guerreiro(nome, raca, classe,)
+monstrim = new Monstro()
+
 
 
 while(true) {
@@ -90,6 +145,7 @@ while(true) {
     `)
     let escolha1 = rl.question('Digite uma das opoções acima: ')
     if (escolha1=='explorar') {
+        luta1 = new Lutem
         
     }
     if (escolha1=='ver inventario') {
