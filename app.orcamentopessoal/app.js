@@ -105,6 +105,25 @@ function cadastrarDespesa(){
 
     if(despesa.validarDados()){
         bancoDeDados.persistirDados(despesa)
+
+        document.getElementById('modal_titulo').innerHTML= 'Despesa adicionada com sucesso'
+        document.getElementById('modal_titulo_div').className ='modal-header text-success'
+        document.getElementById('modal_conteudo').innerHTML = 'Despesa cadastrada com sucesso'
+        document.getElementById('modal_btn_footer').innerHTML ='fechar'
+        $('#modalRegistroDespesa').modal('show')
+        ano.value = ''
+        mes.value = ''
+        dia.value = ''
+        tipo.value = ''
+        descricao.value = ''
+        valor.value = ''
+    } else {
+        document.getElementById('modal_titulo').innerHTML = 'Erro no salvamento de despesa'
+        document.getElementById('modal_titulo_div').className ='modal-header text-danger'
+        document.getElementById('modal_conteudo').innerHTML = 'Erro no salvamento, por favor certifique-se de preencher todos os campos'
+        document.getElementById('modal_btn_footer').className = 'btn btn - danger';
+        document.getElementById('modal_btn_footer').innerHTML = 'Voltar e concertar';
+        $('#modalRegistroDespesa').modal('show')
     }
 }
 
@@ -168,5 +187,7 @@ function pesquisarDespesa(){
 
     carregaListaDespesas(despesas)
 } 
+
+
 
 
